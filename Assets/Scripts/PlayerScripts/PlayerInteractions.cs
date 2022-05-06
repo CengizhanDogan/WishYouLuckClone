@@ -23,23 +23,9 @@ public class PlayerInteractions : MonoBehaviour
         {
             if (chipManager.chips.Contains(chip)) return;
             
-            CheckChip(chip);
             CollectChip(chip);
 
             playerScore.GetScore(chip.chipValue);
-        }
-    }
-
-    private void CheckChip(Chip _chip)
-    {
-        if (_chip.chipValue > 2)
-        {
-            for (int i = 0; i < (_chip.chipValue / 2) - 1; i++)
-            {
-                Chip clonedChip = Instantiate(_chip.gameObject, _chip.transform.position, Quaternion.identity, _chip.transform.parent).GetComponent<Chip>();
-
-                CollectChip(clonedChip);
-            }
         }
     }
 

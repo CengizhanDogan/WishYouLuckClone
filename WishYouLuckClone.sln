@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{01B7D449-4AA8-E1B9-27A3-55EFC192960F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{752425E5-A132-EA96-709D-271CD4D1384D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToonyColorsPro2.Demo", "ToonyColorsPro2.Demo.csproj", "{8F6BBF12-0776-6483-4AE5-1AA5BCA9EDDB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinoBloom.Runtime", "KinoBloom.Runtime.csproj", "{2D139D5F-5EDB-2E3C-4591-B49348713431}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToonyColorsPro.Runtime", "ToonyColorsPro.Runtime.csproj", "{A3246629-E2B0-ABA1-6790-1DEC8BBC8622}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{752425E5-A132-EA96-709D-271CD4D1384D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToonyColorsPro.Editor", "ToonyColorsPro.Editor.csproj", "{BA7208A1-524F-00DA-AF75-4597EEF7661B}"
 EndProject
@@ -27,6 +27,10 @@ Global
 		{01B7D449-4AA8-E1B9-27A3-55EFC192960F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01B7D449-4AA8-E1B9-27A3-55EFC192960F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01B7D449-4AA8-E1B9-27A3-55EFC192960F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{752425E5-A132-EA96-709D-271CD4D1384D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752425E5-A132-EA96-709D-271CD4D1384D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752425E5-A132-EA96-709D-271CD4D1384D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752425E5-A132-EA96-709D-271CD4D1384D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F6BBF12-0776-6483-4AE5-1AA5BCA9EDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F6BBF12-0776-6483-4AE5-1AA5BCA9EDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F6BBF12-0776-6483-4AE5-1AA5BCA9EDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,10 +43,6 @@ Global
 		{A3246629-E2B0-ABA1-6790-1DEC8BBC8622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3246629-E2B0-ABA1-6790-1DEC8BBC8622}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3246629-E2B0-ABA1-6790-1DEC8BBC8622}.Release|Any CPU.Build.0 = Release|Any CPU
-		{752425E5-A132-EA96-709D-271CD4D1384D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{752425E5-A132-EA96-709D-271CD4D1384D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{752425E5-A132-EA96-709D-271CD4D1384D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{752425E5-A132-EA96-709D-271CD4D1384D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BA7208A1-524F-00DA-AF75-4597EEF7661B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA7208A1-524F-00DA-AF75-4597EEF7661B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7208A1-524F-00DA-AF75-4597EEF7661B}.Release|Any CPU.ActiveCfg = Release|Any CPU

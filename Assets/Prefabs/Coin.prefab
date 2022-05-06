@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 6328128180264672472}
   - component: {fileID: 555548505790702030}
   - component: {fileID: 6328128180264672474}
+  - component: {fileID: 6534262102745493078}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -326,6 +327,18 @@ MonoBehaviour:
   chipRb: {fileID: 0}
   chipManager: {fileID: 0}
   playerScore: {fileID: 0}
+--- !u!114 &6534262102745493078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6562710977367409655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52af2f34bff38e84797563d1e9962a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6838405219467508532
 GameObject:
   m_ObjectHideFlags: 0
