@@ -15,4 +15,9 @@ public class AnimationManager : MonoBehaviour
     {
         animator.SetBool("isRunning", _isRunning);
     }
+
+    public void EnableWinAnim()
+    {
+        animator.SetTrigger("Win");
+    }
 }

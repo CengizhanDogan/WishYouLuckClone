@@ -48,8 +48,8 @@ public class ObstacleBehaviour : MonoBehaviour
         _chip.chipManager.chips.Remove(_chip);
         _chip.chipRb.constraints = RigidbodyConstraints.None;
 
-        Vector3 rightThrow = new Vector3(3, 5, 0);
-        Vector3 leftThrow = new Vector3(-3, 5, 0);
+        Vector3 rightThrow = new Vector3(Random.Range(3f, 5f), Random.Range(5f, 10f), 0);
+        Vector3 leftThrow = new Vector3(Random.Range(-5f, -3f), Random.Range(5f, 10f), 0);
 
         Vector3[] directions = new Vector3[2];
         directions[0] = rightThrow;

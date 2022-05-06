@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(AnimationManager), typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float forwardSpeed = 8;
+    public float forwardSpeed = 8;
     [SerializeField] private float swerveSpeed;
 
     private Vector2 startPos;

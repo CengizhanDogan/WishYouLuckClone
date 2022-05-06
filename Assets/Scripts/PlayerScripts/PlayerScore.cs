@@ -8,7 +8,7 @@ public class PlayerScore : MonoBehaviour
 {
     private int score;
 
-    [SerializeField] private TextMeshProUGUI textMesh;
+    public TextMeshProUGUI textMesh;
 
     private void Start()
     {
