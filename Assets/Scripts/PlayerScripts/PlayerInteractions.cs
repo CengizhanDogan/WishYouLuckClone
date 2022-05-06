@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(ChipManager))]
 [RequireComponent(typeof(PlayerScore))]
@@ -19,13 +16,36 @@ public class PlayerInteractions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        #region Commneted Area
+        /* This commented code can be used if not bundle but 1 chips is collected
+
         if (other.TryGetComponent(out Chip chip))
         {
             if (chipManager.chips.Contains(chip)) return;
-            
+
             CollectChip(chip);
 
             playerScore.GetScore(chip.chipValue);
+        }
+
+        */
+        #endregion
+
+        if (other.TryGetComponent(out ChipBundleManager bundle))
+        {
+            if (bundle.collected) return;
+
+            bundle.collected = true;
+
+            Destroy(other);
+            Destroy(bundle.textParent);
+
+            foreach (var chip in bundle.bundleChips)
+            {
+                CollectChip(chip);
+            }
+
+            playerScore.GetScore(bundle.totalValue);
         }
     }
 

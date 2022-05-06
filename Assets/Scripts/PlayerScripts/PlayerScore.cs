@@ -8,7 +8,7 @@ public class PlayerScore : MonoBehaviour
 {
     private int score;
 
-    [SerializeField] TextMeshProUGUI textMesh;
+    [SerializeField] private TextMeshProUGUI textMesh;
 
     private void Start()
     {
@@ -17,6 +17,12 @@ public class PlayerScore : MonoBehaviour
     public void GetScore(int _earnedScore)
     {
         score += _earnedScore;
+
+        SetText();
+    }
+    public void LoseScore(int _lostScore)
+    {
+        score -= _lostScore;
 
         SetText();
     }

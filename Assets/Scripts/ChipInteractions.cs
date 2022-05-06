@@ -8,13 +8,16 @@ public class ChipInteractions : MonoBehaviour
 {
     private Chip myChip;
 
-    private void Start()
+    private void Awake()
     {
         myChip = GetComponent<Chip>();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (!myChip.chipManager) return;
+
+        #region Commneted Area
+        /* This commented code can be used if not bundle but 1 chips is collected
 
         if (other.TryGetComponent(out Chip chip))
         {
@@ -23,6 +26,26 @@ public class ChipInteractions : MonoBehaviour
             CollectChip(chip);
 
             myChip.playerScore.GetScore(chip.chipValue);
+        }
+
+        */
+        #endregion
+
+        if (other.TryGetComponent(out ChipBundleManager bundle))
+        {
+            if (bundle.collected) return;
+
+            bundle.collected = true;
+
+            Destroy(other);
+            Destroy(bundle.textParent);
+
+            foreach (var chip in bundle.bundleChips)
+            {
+                CollectChip(chip);
+            }
+
+            myChip.playerScore.GetScore(bundle.totalValue);
         }
     }
     private void CollectChip(Chip _chip)

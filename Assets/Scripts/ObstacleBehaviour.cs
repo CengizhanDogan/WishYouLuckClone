@@ -26,11 +26,18 @@ public class ObstacleBehaviour : MonoBehaviour
             {
                 Destroy(_chip.chipManager.chips[i].GetComponent<Collider>());
 
+                _chip.playerScore.LoseScore(2);
+
+                Destroy(_chip.chipManager.chips[i].gameObject, 2f);
+
                 ThrowChip(_chip.chipManager.chips[i]);
             }
         }
         else
         {
+            _chip.playerScore.LoseScore(2);
+
+            Destroy(_chip.gameObject, 2f);
 
             ThrowChip(_chip);
         }

@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class Chip : MonoBehaviour
 {
-    [RangeExtension(2, 100, 2)]
-    public int chipValue;
+    [HideInInspector] public int chipValue = 2;
 
     [HideInInspector] public Rigidbody chipRb;
     [HideInInspector] public ChipManager chipManager;
