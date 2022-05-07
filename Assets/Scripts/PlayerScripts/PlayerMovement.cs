@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 [RequireComponent(typeof(AnimationManager), typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     public float forwardSpeed = 8;
-    [SerializeField] private float swerveSpeed;
+    public float swerveSpeed = 60;
 
     private Vector2 startPos;
     private Vector2 deltaPos;
@@ -39,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isStarted = true;
-            animManager.SetRunAnimation(true);
+            SetSpeed(true);
         }
     }
 
@@ -71,5 +69,26 @@ public class PlayerMovement : MonoBehaviour
         Vector3 clampPos = transform.position;
         clampPos.x = Mathf.Clamp(clampPos.x, -5, 5);
         transform.position = clampPos;
+    }
+
+    public void SetSpeed(bool give)
+    {
+        if (give)
+        {
+            animManager.SetRunAnimation(true);
+
+            DOTween.To(() => forwardSpeed, x => forwardSpeed = x, 8, 2f).SetEase(Ease.Linear);
+
+            swerveSpeed = 60;
+        }
+        else
+        {
+            DOTween.To(() => forwardSpeed, x => forwardSpeed = x, 0, 2f).SetEase(Ease.Linear).OnComplete(() =>
+            {
+                animManager.SetRunAnimation(false);
+            });
+
+            swerveSpeed = 0;
+        }
     }
 }

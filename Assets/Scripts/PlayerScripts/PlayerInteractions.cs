@@ -63,6 +63,11 @@ public class PlayerInteractions : MonoBehaviour
             SetPosition();
             SetAnims();
         }
+
+        if (other.TryGetComponent(out LensBehaviour lens))
+        {
+            playerMovement.SetSpeed(false);
+        }
     }
 
     private void CollectChip(Chip _chip)
@@ -97,6 +102,7 @@ public class PlayerInteractions : MonoBehaviour
     private void SetPosition()
     {
         playerMovement.forwardSpeed = 0;
+        playerMovement.swerveSpeed = 0;
 
         transform.DORotate(Vector3.up * 180, 0.25f);
 

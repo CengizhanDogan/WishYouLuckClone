@@ -5,16 +5,18 @@ using TMPro;
 
 public class ChipBundleManager : MonoBehaviour
 {
-    [RangeExtension(2, 30, 2)]
+    [RangeExtension(2, 1000, 2)]
     public int totalValue;
+    [HideInInspector] public int spawnValue;
 
     [SerializeField] private GameObject chipPrefab;
     [SerializeField] private GameObject placeHolder;
+    [SerializeField] private Transform positionParent;
     [SerializeField] private List<Transform> chipPositions = new List<Transform>();
 
     [SerializeField] private TextMeshProUGUI textMesh;
     [HideInInspector] public GameObject textParent;
-    [HideInInspector] public List<Chip> bundleChips = new List<Chip>();
+     public List<Chip> bundleChips = new List<Chip>();
 
     [HideInInspector] public bool collected;
 
@@ -51,6 +53,7 @@ public class ChipBundleManager : MonoBehaviour
     private void Awake()
     {
         textParent = textMesh.transform.parent.gameObject;
+        spawnValue = totalValue / 2;
     }
     void Start()
     {
@@ -61,19 +64,25 @@ public class ChipBundleManager : MonoBehaviour
 
     private void SpawnChips()
     {
-        for (int i = 0; i < totalValue / 2; i++)
+        for (int i = 0; i < spawnValue; i++)
         {
             Vector3 spawnPos = Vector3.zero;
-            GameObject clonedChip = null;
 
             if (i < 3) spawnPos = chipPositions[0].position;
             else if (i > 2 && i < 8) spawnPos = chipPositions[1].position;
             else if (i > 7 && i < 13) spawnPos = chipPositions[2].position;
-            else spawnPos = chipPositions[0].position;
+            else if (i > 12 && i < 16) spawnPos = chipPositions[0].position;
+            else
+            {
+                spawnValue -= 16;
+                positionParent.position += Vector3.up * 1.25f;
+                SpawnChips();
+                return;
+            }
 
             spawnPos += (Vector3.up * SpawnOffset(i)) + (Vector3.right * RandomValue) + (Vector3.forward * RandomValue);
 
-            clonedChip = Instantiate(chipPrefab, spawnPos, Quaternion.identity, transform);
+            GameObject clonedChip = Instantiate(chipPrefab, spawnPos, Quaternion.identity, transform);
             bundleChips.Add(clonedChip.GetComponent<Chip>());
         }
     }

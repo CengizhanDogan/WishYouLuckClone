@@ -444,7 +444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gFX: {fileID: 4698511883986112634}
   ending: {fileID: 1841156887}
-  platformScale: 100
+  platformScale: 250
 --- !u!1 &8377396793546028908
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +665,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8377396794231784070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1841156892}
+        m_TargetAssemblyTypeName: EndingBehaviour, Assembly-CSharp
+        m_MethodName: NextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8377396794751090358
 GameObject:
   m_ObjectHideFlags: 0

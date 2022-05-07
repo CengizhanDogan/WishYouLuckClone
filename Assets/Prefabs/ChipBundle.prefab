@@ -372,9 +372,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c07749d0b6bc64da848d11ca71a094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalValue: 8
+  totalValue: 20
+  spawnValue: 0
   chipPrefab: {fileID: 6562710977367409655, guid: 4a7fc93ae48d278489ad5d8ff7aa6883, type: 3}
   placeHolder: {fileID: 2101673935434371974}
+  positionParent: {fileID: 2101673936705861297}
   chipPositions:
   - {fileID: 2101673936550562120}
   - {fileID: 2101673936499075871}
