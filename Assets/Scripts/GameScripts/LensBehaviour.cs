@@ -11,7 +11,11 @@ public class LensBehaviour : MonoBehaviour
     public int bettedValue;
     [SerializeField] private TextMeshPro textMesh;
 
-    private void Start()
+    private void Awake()
+    {
+        myGame.lensBehaviours.Add(this);
+    }
+    public void SetCorrentLens()
     {
         if (lensProbability == myGame.myProbability)
         {
@@ -33,7 +37,6 @@ public class LensBehaviour : MonoBehaviour
         if (other.TryGetComponent(out PlayerMovement player))
         {
             myGame.MakeMovement();
-            myGame.GetBetValue();
             myGame.playerMovement = player;
         }
     }

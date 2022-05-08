@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
+using Cinemachine;
 
 [RequireComponent(typeof(Collider), typeof(Rigidbody), typeof(ChipManager))]
 [RequireComponent(typeof(PlayerScore), typeof(AnimationManager), typeof(PlayerMovement))]
@@ -12,7 +13,7 @@ public class PlayerInteractions : MonoBehaviour
     private PlayerMovement playerMovement;
 
     [SerializeField] private GameObject endCam;
-
+    [SerializeField] private CinemachineVirtualCamera vCam;
     private void Awake()
     {
         chipManager = GetComponent<ChipManager>();
@@ -91,6 +92,8 @@ public class PlayerInteractions : MonoBehaviour
 
     private void SetCam()
     {
+        vCam.transform.parent = null;
+        vCam.Follow = null;
         Vector3 camPos = endCam.transform.position;
         camPos.x = 0;
 

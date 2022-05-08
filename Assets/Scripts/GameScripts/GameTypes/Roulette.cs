@@ -5,9 +5,19 @@ using DG.Tweening;
 
 public class Roulette : GameBehaviour
 {
+    [Header("Roulette Components")]
     [SerializeField] private Transform rouletteModel;
     [SerializeField] private Transform ball;
 
+    private void Start()
+    {
+        GetProbability();
+        CheckLenses();
+    }
+    public void GetProbability()
+    {
+        myProbability = probability.probablities[Random.Range(0, probability.probablities.Count)];
+    }
     public override void MakeMovement()
     {
         int rotateValue = 0;
@@ -22,10 +32,7 @@ public class Roulette : GameBehaviour
             Vector3 ballPos = new Vector3(-1, -2.6f, 4.75f);
             ball.DOLocalMove(ballPos, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
             {
-                transform.DOMoveY(-10, 1f).SetEase(Ease.InBack).OnComplete(() =>
-                {
                     SpawnEarning();
-                });
             });
         });
     }

@@ -5,21 +5,23 @@ using DG.Tweening;
 
 public abstract class GameBehaviour : MonoBehaviour
 {
+    [Header("Game Components")]
     [SerializeField] private GameObject chipBundle;
-    private Probability probability;
-    public PlayerMovement playerMovement;
-    public LensBehaviour correctLens;
-    public ProbabilityType myProbability;
 
-    public int betValue;
+    [HideInInspector] public Probability probability;
+    [HideInInspector] public PlayerMovement playerMovement;
 
-    private void Awake()
+    [HideInInspector] public List<LensBehaviour> lensBehaviours = new List<LensBehaviour>();
+    [HideInInspector] public LensBehaviour correctLens;
+    [HideInInspector] public ProbabilityType myProbability;
+
+    [HideInInspector] public int betValue;
+
+    public void Awake()
     {
         probability = GetComponent<Probability>();
-
-        myProbability = probability.probablities[Random.Range(0, probability.probablities.Count)];
     }
-    public void GetBetValue()
+    private void GetBetValue()
     {
         Debug.Log(correctLens);
         betValue = correctLens.bettedValue;
@@ -27,24 +29,36 @@ public abstract class GameBehaviour : MonoBehaviour
 
     public abstract void MakeMovement();
 
+    public void CheckLenses()
+    {
+        foreach (LensBehaviour lens in lensBehaviours)
+        {
+            lens.SetCorrentLens();
+        }
+    }
     public void SpawnEarning()
     {
-        if (betValue > 0)
+        GetBetValue();
+
+        transform.DOMoveY(-10, 1f).SetEase(Ease.InBack).OnComplete(() =>
         {
-            ChipBundleManager chipsBundleClone = Instantiate(chipBundle, transform.position,
-                Quaternion.identity, transform).GetComponent<ChipBundleManager>();
+            if (betValue > 0)
+            {
+                ChipBundleManager chipsBundleClone = Instantiate(chipBundle, transform.position,
+                    Quaternion.identity, transform).GetComponent<ChipBundleManager>();
 
-            chipsBundleClone.totalValue = betValue * 2;
-            chipsBundleClone.spawnValue = betValue;
+                chipsBundleClone.totalValue = betValue * 2;
+                chipsBundleClone.spawnValue = betValue;
 
-            chipsBundleClone.transform.DOMoveY(0, 1f).SetEase(Ease.OutBack).OnComplete(() =>
+                chipsBundleClone.transform.DOMoveY(0, 1f).SetEase(Ease.OutBack).OnComplete(() =>
+                {
+                    playerMovement.SetSpeed(true);
+                });
+            }
+            else
             {
                 playerMovement.SetSpeed(true);
-            });
-        }
-        else
-        {
-            playerMovement.SetSpeed(true);
-        }
+            }
+        });
     }
 }
