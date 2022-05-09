@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chips: []
-  followValue: 150
+  followValue: 75
   frontValue: 0.4
   upValue: 1
 --- !u!114 &8020228601399743734

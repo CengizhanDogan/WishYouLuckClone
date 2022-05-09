@@ -17,18 +17,15 @@ public class ChipInteractions : MonoBehaviour
         if (!myChip.chipManager) return;
 
         #region Commneted Area
-        /* This commented code can be used if not bundle but 1 chips is collected
-
         if (other.TryGetComponent(out Chip chip))
         {
-            if (myChip.chipManager.chips.Contains(chip)) return;
+            if (myChip.chipManager.chips.Contains(chip) || chip.bundleChip || chip.thrown) return;
 
             CollectChip(chip);
 
             myChip.playerScore.GetScore(chip.chipValue);
         }
 
-        */
         #endregion
 
         if (other.TryGetComponent(out ChipBundleManager bundle))
@@ -40,9 +37,9 @@ public class ChipInteractions : MonoBehaviour
             Destroy(other);
             Destroy(bundle.textParent);
 
-            foreach (var chip in bundle.bundleChips)
+            foreach (var bundleChip in bundle.bundleChips)
             {
-                CollectChip(chip);
+                CollectChip(bundleChip);
             }
 
             myChip.playerScore.GetScore(bundle.totalValue);

@@ -5,12 +5,14 @@ using UnityEngine;
 public class ObstacleBehaviour : MonoBehaviour
 {
     [SerializeField] private float throwPower;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Chip chip))
         {
             if (chip.chipManager.chips.Contains(chip))
             {
+                chip.thrown = true;
                 Destroy(other);
 
                 CheckIfLastMember(chip, chip.chipManager.chips.IndexOf(chip));

@@ -25,18 +25,14 @@ public class PlayerInteractions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         #region Commneted Area
-        /* This commented code can be used if not bundle but 1 chips is collected
-
         if (other.TryGetComponent(out Chip chip))
         {
-            if (chipManager.chips.Contains(chip)) return;
+            if (chipManager.chips.Contains(chip) || chip.bundleChip || chip.thrown) return;
 
             CollectChip(chip);
 
             playerScore.GetScore(chip.chipValue);
         }
-
-        */
         #endregion
 
         if (other.TryGetComponent(out ChipBundleManager bundle))
@@ -48,9 +44,9 @@ public class PlayerInteractions : MonoBehaviour
             Destroy(other);
             Destroy(bundle.textParent);
 
-            foreach (var chip in bundle.bundleChips)
+            foreach (var bundleChip in bundle.bundleChips)
             {
-                CollectChip(chip);
+                CollectChip(bundleChip);
             }
 
             playerScore.GetScore(bundle.totalValue);
@@ -84,7 +80,7 @@ public class PlayerInteractions : MonoBehaviour
     private void SetScoreUI()
     {
         Transform playerCanvas = playerScore.textMesh.transform.parent.parent;
-        playerCanvas.parent = transform.parent;
+        playerCanvas.SetParent(transform.parent);
         Vector3 canvasPos = playerCanvas.position;
         canvasPos.x = 0;
         playerCanvas.position = canvasPos;

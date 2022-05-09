@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a11f56bbee565448e000e7aea2cbd1, type: 3}
   m_Name: LevelHolder
   m_EditorClassIdentifier: 
-  levelCount: 2
+  levelCount: 1
   levels:
   - {fileID: 8377396794693824060, guid: fad7a3271dcab84489cff2de1ed51e68, type: 3}
   - {fileID: 1523623724653441000, guid: 743a127bef24d1c4a9cc382d0f949c7c, type: 3}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof (Probability))]
 public abstract class GameBehaviour : MonoBehaviour
 {
     [Header("Game Components")]
@@ -23,7 +24,6 @@ public abstract class GameBehaviour : MonoBehaviour
     }
     private void GetBetValue()
     {
-        Debug.Log(correctLens);
         betValue = correctLens.bettedValue;
     }
 

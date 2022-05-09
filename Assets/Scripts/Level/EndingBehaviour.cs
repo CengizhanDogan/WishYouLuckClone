@@ -15,6 +15,10 @@ public class EndingBehaviour : MonoBehaviour
     {
         if (other.TryGetComponent(out Chip chip))
         {
+            if (!chip.chipManager) return;
+
+            chip.thrown = true;
+
             Destroy(other);
             PlaceTheChip(chip.transform);
             chip.chipManager.chips.Remove(chip);

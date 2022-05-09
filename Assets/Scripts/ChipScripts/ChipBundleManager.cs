@@ -84,6 +84,7 @@ public class ChipBundleManager : MonoBehaviour
 
             GameObject clonedChip = Instantiate(chipPrefab, spawnPos, Quaternion.identity, transform);
             bundleChips.Add(clonedChip.GetComponent<Chip>());
+            clonedChip.GetComponent<Chip>().bundleChip = true;
         }
     }
 

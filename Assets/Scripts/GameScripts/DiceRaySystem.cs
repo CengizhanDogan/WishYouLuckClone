@@ -6,8 +6,9 @@ using UnityEngine;
 public class DiceRaySystem : MonoBehaviour
 {
     [SerializeField] private Dice dice;
-    private List<DiceSides> diceSides = new List<DiceSides>();
     [SerializeField] private LayerMask layer;
+
+    private List<DiceSides> diceSides = new List<DiceSides>();
 
     public bool stoppedOnce;
 

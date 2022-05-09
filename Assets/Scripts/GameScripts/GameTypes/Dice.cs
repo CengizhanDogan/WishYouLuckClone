@@ -7,12 +7,13 @@ public class Dice : GameBehaviour
     [Header("Dice Components")]
     [SerializeField] private List<DiceRaySystem> dices = new List<DiceRaySystem>();
     public List<int> results = new List<int>();
-    [SerializeField] private float forceValue = 1000;
 
+    private int stoppedCount = 0;
+
+    [SerializeField] private float forceValue = 1000;
     [SerializeField] private bool work;
     private bool stopped;
 
-    private int stoppedCount = 0;
     private float RandomTorqueValue
     {
         get { return Random.Range(-10f, 10f); }
@@ -34,7 +35,7 @@ public class Dice : GameBehaviour
 
             Vector3 randomTorque = new Vector3(RandomTorqueValue, RandomTorqueValue / 5f, RandomTorqueValue);
 
-            diceRb.AddTorque(randomTorque * forceValue * 2f * Time.deltaTime, ForceMode.Impulse);
+            diceRb.AddTorque(randomTorque * forceValue * Random.Range(0f,2f) * Time.deltaTime, ForceMode.Impulse);
         }
     }
 

@@ -8,6 +8,8 @@ public class Chip : MonoBehaviour
     [HideInInspector] public ChipManager chipManager;
     [HideInInspector] public PlayerScore playerScore;
 
+    public bool bundleChip;
+    [HideInInspector] public bool thrown;
     void Start()
     {
         SetRigidBody();

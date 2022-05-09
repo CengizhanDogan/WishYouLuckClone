@@ -461,8 +461,8 @@ MonoBehaviour:
   myProbability: 2
   betValue: 0
   dices:
-  - {fileID: 9063115294837941289}
-  - {fileID: 9063115295515307636}
+  - {fileID: 5392934631463575016}
+  - {fileID: 121584133877291287}
   results: 
   forceValue: 500
   work: 0
@@ -1434,10 +1434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8144705527219650994}
     m_Modifications:
-    - target: {fileID: 806111765945847366, guid: 329e258b3455be948803a2b56fd33385, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f480fa731be9054aa1981d0b9bd708b, type: 2}
     - target: {fileID: 1166183888567447443, guid: 329e258b3455be948803a2b56fd33385, type: 3}
       propertyPath: m_Name
       value: DiceModel1
@@ -1486,35 +1482,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9063115294837941289, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+      propertyPath: dice
+      value: 
+      objectReference: {fileID: 6957158354829200508}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 329e258b3455be948803a2b56fd33385, type: 3}
---- !u!4 &3203718030091128040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1973929852107552041, guid: 329e258b3455be948803a2b56fd33385, type: 3}
-  m_PrefabInstance: {fileID: 3967999127881546177}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2827755063683372626 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1166183888567447443, guid: 329e258b3455be948803a2b56fd33385, type: 3}
-  m_PrefabInstance: {fileID: 3967999127881546177}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9063115294837941289
+--- !u!114 &5392934631463575016 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9063115294837941289, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+  m_PrefabInstance: {fileID: 3967999127881546177}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2827755063683372626}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9def9b752b41ca4687a843725373eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 6957158354829200508}
-  layer:
-    serializedVersion: 2
-    m_Bits: 64
-  stoppedOnce: 0
+--- !u!4 &3203718030091128040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1973929852107552041, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+  m_PrefabInstance: {fileID: 3967999127881546177}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8964788306997804350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1574,32 +1563,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9063115294837941289, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+      propertyPath: dice
+      value: 
+      objectReference: {fileID: 6957158354829200508}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 329e258b3455be948803a2b56fd33385, type: 3}
---- !u!4 &7425764852641368087 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1973929852107552041, guid: 329e258b3455be948803a2b56fd33385, type: 3}
-  m_PrefabInstance: {fileID: 8964788306997804350}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7802008508604699309 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1166183888567447443, guid: 329e258b3455be948803a2b56fd33385, type: 3}
-  m_PrefabInstance: {fileID: 8964788306997804350}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9063115295515307636
+--- !u!114 &121584133877291287 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 9063115294837941289, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+  m_PrefabInstance: {fileID: 8964788306997804350}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7802008508604699309}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9def9b752b41ca4687a843725373eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 6957158354829200508}
-  layer:
-    serializedVersion: 2
-    m_Bits: 64
-  stoppedOnce: 0
+--- !u!4 &7425764852641368087 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1973929852107552041, guid: 329e258b3455be948803a2b56fd33385, type: 3}
+  m_PrefabInstance: {fileID: 8964788306997804350}
+  m_PrefabAsset: {fileID: 0}
